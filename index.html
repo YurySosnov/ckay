@@ -2,13 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="/styles/tailwind-output.css" rel="stylesheet">
+    <title>Catrine Kay</title>
+    <link rel="stylesheet" href="/styles/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/styles/tailwind-output.css" >
+    <script src="js/lib/jquery-3.6.0.min.js"></script>
 </head>
 <body class="theme-dark">
-<div class="bl w-1/3"></div>
+<div class="theme-switcher-container w-full flex justify-center items-center pt-4 pb-2">
+    <div id="theme-switcher" class="theme-switcher">
+        <div class="checker"></div>
+    </div>
+</div>
+<div class="header flex justify-center items-center">
+    <div class="geo w-full py-4 flex justify-center">
+        <div class="geo-content flex flex-col justify-center items-center">
+            <div class="flag ge w-4 h-3 mb-1 bg-center bg-no-repeat bg-contain"></div>
+            <div class="geo-description text-12 opacity-60">Now in <span class="country">Georgia</span></div>
+        </div>
+    </div>
+</div>
+<div class="title py-4 flex flex-col justify-center items-center">
+    <div class="title-name text-24 opacity-30 font-thin">Catrine Kay</div>
+    <div class="title-description">photo artist</div>
+</div>
+<div class="contacts py-8 flex gap-6 justify-center items-center">
+    <a class="contact-link" href="https://t.me/communi_cate">
+        <span class="contact-icon icon-telegram"></span>
+    </a>
+    <a class="contact-link" href="https://t.me/communi_cate">
+        <span class="contact-icon icon-whatsapp"></span>
+    </a>
+    <a class="contact-link" href="https://t.me/communi_cate">
+        <span class="contact-icon icon-instagram"></span>
+    </a>
+    <a class="contact-link" href="https://t.me/communi_cate">
+        <span class="contact-icon icon-email"></span>
+    </a>
+</div>
+<div class="swiper-container py-4">
+    <!-- Slider main container -->
+    <div class="ckay-swiper swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="images/slides/slide-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/slides/slide-2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/slides/slide-3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/slides/slide-4.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+<div class="content p-6 leading-28 text-center">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever.
+</div><div class="content p-6 leading-28 text-center">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever.
+</div>
+
+<div class="nav mobile-nav fixed w-full h-16 left-0 bottom-0 px-4 flex justify-around items-center backdrop-blur-xl">
+    <a  class="nav-item" href="/portfolio">Portfolio</a>
+    <a  class="nav-item" href="/">Home</a>
+    <a  class="nav-item" href="/price">Price</a>
+</div>
 </body>
+<script src="js/lib/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 </html>

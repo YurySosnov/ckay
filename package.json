@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "npx postcss src/scss/tailwind-input.scss -o ./styles/tailwind-output.css",
-    "watch": "npx tailwindcss -i src/scss/tailwind-input.scss -o ./styles/tailwind-output.css --watch"
+    "watch": "npx postcss src/scss/tailwind-input.scss -o ./styles/tailwind-output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "postcss-import": "^14.1.0",
     "postcss-nesting": "^10.1.8",
     "tailwindcss": "^3.1.2"
+  },
+  "dependencies": {
+    "swiper": "^8.2.4"
   }
 }
