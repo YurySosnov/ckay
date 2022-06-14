@@ -1,0 +1,9 @@
+body {
+  font-size: 1rem;
+  &.theme-dark {
+    @apply bg-dark text-dark;
+  }
+  &.theme-light {
+    @apply bg-light text-light;
+  }
+}
