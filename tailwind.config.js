@@ -36,6 +36,7 @@ module.exports = {
         '28': '1.75rem',
         '32': '2rem',
         '33': '2.0625rem',
+        '36': '2.25rem',
         '40': '2.5rem',
         '42': '2.625rem',
         '60': '3.75rem',
@@ -58,7 +59,8 @@ module.exports = {
       },
       backgroundColor: {
         dark: {'DEFAULT': '#151515'},
-        light: {'DEFAULT': '#F6F6F6'}
+        color: {'DEFAULT': '#ffe3c1'},
+        light: {'DEFAULT': '#F6F6F6'},
       },
       borderColor: {},
       spacing: {

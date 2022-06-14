@@ -1,0 +1,31 @@
+.service-section {
+  @apply px-8 py-8;
+}
+
+.service-section-title {
+  @apply flex justify-between items-center pt-4 pb-4;
+  border-top-width: 1px;
+  border-style: solid;
+  .from {
+    @apply opacity-30 font-regular;
+  }
+  .price {
+    @apply font-regular opacity-60;
+  }
+}
+
+.theme-dark {
+  .service-section-title {
+    border-color: rgba(255,255,255,.05);
+  }
+}
+.theme-color {
+  .service-section-title {
+    border-color: rgba(156,100,213,.1);
+  }
+}
+.theme-light {
+  .service-section-title {
+    border-color: rgba(0,0,0,.05);
+  }
+}

@@ -45,8 +45,15 @@ $(function(){
         // scrollbar: {
         //     el: '.swiper-scrollbar',
         // },
+
+        breakpoints: {
+            1024: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+            }
+        }
     });
-    $('#theme-switcher').on('click', function(){
+    $('.theme-switcher').on('click', function(){
         $body.rotateClass('theme-dark','theme-color','theme-light');
     });
 });

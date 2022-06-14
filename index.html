@@ -10,8 +10,8 @@
     <script src="js/lib/jquery-3.6.0.min.js"></script>
 </head>
 <body class="theme-dark">
-<div class="theme-switcher-container w-full flex justify-center items-center pt-4 pb-2">
-    <div id="theme-switcher" class="theme-switcher">
+<div class="theme-switcher-container w-full flex justify-center items-center pt-4 pb-2 lg:hidden">
+    <div class="theme-switcher">
         <div class="checker"></div>
     </div>
 </div>
@@ -24,10 +24,12 @@
     </div>
 </div>
 <div class="title py-4 flex flex-col justify-center items-center">
-    <div class="title-name text-24 opacity-30 font-thin">Catrine Kay</div>
-    <div class="title-description">photo artist</div>
+    <div class="title-name text-24 opacity-60 font-thin
+                lg:text-36">Catrine Kay</div>
+    <div class="title-description font-regular
+                lg:text-18">photo artist</div>
 </div>
-<div class="contacts py-8 flex gap-6 justify-center items-center">
+<div class="contacts py-8 flex gap-6 justify-center items-center lg:hidden">
     <a class="contact-link" href="https://t.me/communi_cate">
         <span class="contact-icon icon-telegram"></span>
     </a>
@@ -66,19 +68,109 @@
         <div class="swiper-button-next"></div>
     </div>
 </div>
-<div class="content p-6 leading-28 text-center">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever.
-</div><div class="content p-6 leading-28 text-center">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever.
-</div>
+<div class="content">
+    <p class="p-6 leading-28 text-center mx-auto max-w-screen-md">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever.
+    </p>
 
-<div class="nav mobile-nav fixed w-full h-16 left-0 bottom-0 px-4 flex justify-around items-center backdrop-blur-xl">
+    <div class="separator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <h2>Services</h2>
+    <div class="service-section">
+        <div class="service-section-title">
+            <h3>Individual</h3>
+            <div class="service-section-price">
+                <span class="from">from</span> <span class="price">$200</span>
+            </div>
+        </div>
+        <div class="service-section-content">
+            <div class="grid grid-cols-2 gap-1 lg:grid-cols-3 gap-4">
+                <img src="images/index/individual-1.jpg" alt="">
+                <img src="images/index/individual-2.jpg" alt="">
+                <img src="images/index/individual-3.jpg" alt="">
+                <img src="images/index/individual-4.jpg" alt="">
+                <img src="images/index/individual-5.jpg" alt="">
+                <img src="images/index/individual-6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="separator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-section-title">
+            <h3>Fine Art</h3>
+            <div class="service-section-price">
+                <span class="from">from</span> <span class="price">$250</span>
+            </div>
+        </div>
+        <div class="service-section-content">
+            <div class="grid grid-cols-2 gap-1 lg:grid-cols-3 gap-4">
+                <img src="images/index/individual-1.jpg" alt="">
+                <img src="images/index/individual-2.jpg" alt="">
+                <img src="images/index/individual-3.jpg" alt="">
+                <img src="images/index/individual-4.jpg" alt="">
+                <img src="images/index/individual-5.jpg" alt="">
+                <img src="images/index/individual-6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav mobile-nav fixed w-full h-16 left-0 bottom-0 px-4 flex justify-around items-center backdrop-blur-lg
+                lg:hidden">
     <a  class="nav-item" href="/portfolio">Portfolio</a>
     <a  class="nav-item" href="/">Home</a>
     <a  class="nav-item" href="/price">Price</a>
 </div>
+<div class="nav desktop-nav fixed w-full h-16 left-0 top-0 px-8 justify-between items-center backdrop-blur-lg hidden
+                lg:flex">
+    <div class="w-2/5">
+        <div class="nav-items flex justify-start items-center">
+            <div class="theme-switcher mr-4">
+                <div class="checker"></div>
+            </div>
+            <a  class="nav-item" href="/portfolio">Portfolio</a>
+            <a  class="nav-item" href="/">Home</a>
+            <a  class="nav-item" href="/price">Price</a>
+        </div>
+    </div>
+
+    <div class="w-1/5">
+        <div class="geo w-full py-4 flex justify-center">
+            <div class="geo-content flex flex-row gap-2 justify-center items-center">
+                <div class="flag ge w-4 h-3 bg-center bg-no-repeat bg-contain"></div>
+                <div class="geo-description text-12 opacity-60">Now in <span class="country">Georgia</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-2/5">
+        <div class="contacts py-8 flex gap-6 justify-end items-center">
+            <a class="contact-link" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-telegram"></span>
+            </a>
+            <a class="contact-link" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-whatsapp"></span>
+            </a>
+            <a class="contact-link" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-instagram"></span>
+            </a>
+            <a class="contact-link" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-email"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
 </body>
 <script src="js/lib/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
