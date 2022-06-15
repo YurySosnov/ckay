@@ -1,9 +1,9 @@
 .ckay-swiper {
   .swiper-button-next,
   .swiper-button-prev {
-    @apply text-light h-full top-0 mt-0;
+    @apply text-light h-full top-0 mt-0 w-8 md:w-12 lg:w-16;
     &:after {
-      @apply text-16;
+      @apply text-16 md:text-20 lg:text-36;
     }
   }
   .swiper-button-prev {

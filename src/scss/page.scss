@@ -35,6 +35,18 @@ body {
 }
 
 .theme-dark {
+  .flag {
+    box-shadow: 0 1px 3px rgba(255,255,255,.1);
+  }
+}
+
+.theme-light {
+  .flag {
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  }
+}
+
+.theme-dark {
   .title-name, h2 {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
   }
@@ -73,8 +85,7 @@ h3 {
 
 .theme-dark {
   .separator .dot {
-    @apply opacity-10;
-    background-color: #fff;
+    @apply opacity-10 bg-element-dark;
   }
 }
 
@@ -87,7 +98,6 @@ h3 {
 
 .theme-light {
   .separator .dot {
-    @apply opacity-15;
-    background-color: #000;
+    @apply opacity-15 bg-element-light;
   }
 }

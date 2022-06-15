@@ -54,6 +54,6 @@ $(function(){
         }
     });
     $('.theme-switcher').on('click', function(){
-        $body.rotateClass('theme-dark','theme-color','theme-light');
+        $body.rotateClass('theme-dark','theme-light');
     });
 });

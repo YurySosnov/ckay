@@ -54,13 +54,21 @@ module.exports = {
         '65': '4.0625rem',
       },
       textColor: {
-        dark: {'DEFAULT': '#DCD7CD'},
-        light: {'DEFAULT': '#13120F'}
+        // dark: {'DEFAULT': '#DCD7CD'},
+        dark: {'DEFAULT': '#ddeaee'},
+        // light: {'DEFAULT': '#13120F'}
+        light: {'DEFAULT': '#121615'}
       },
       backgroundColor: {
-        dark: {'DEFAULT': '#151515'},
-        color: {'DEFAULT': '#ffe3c1'},
+        // dark: {'DEFAULT': '#151515'},
+        dark: {'DEFAULT': '#090d10'},
+        color: {'DEFAULT': '#f0e4ce'},
         light: {'DEFAULT': '#F6F6F6'},
+        'element-dark': {'DEFAULT': '#ddeaee'},
+        'element-light': {'DEFAULT': '#121615'},
+        // 'nav-dark': {'DEFAULT': 'rgba(0,0,0,.65)'},
+        'nav-dark': {'DEFAULT': 'rgba(17,20,26,.65)'},
+        'nav-light': {'DEFAULT': 'rgba(255,255,255,.85)'},
       },
       borderColor: {},
       spacing: {
