@@ -680,6 +680,12 @@ video {
 .text-24 {
   font-size: 1.5rem;
 }
+.text-32 {
+  font-size: 2rem;
+}
+.text-28 {
+  font-size: 1.75rem;
+}
 .font-thin {
   font-weight: 100;
 }
@@ -1244,6 +1250,10 @@ h3 {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:text-28 {
+    font-size: 1.75rem;
   }
 }
 @media (min-width: 1024px) {
