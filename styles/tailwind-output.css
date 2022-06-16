@@ -571,10 +571,8 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.mr-2 {
+.mx-2 {
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 .flex {
@@ -628,14 +626,14 @@ video {
 .justify-between {
   justify-content: space-between;
 }
-.justify-around {
-  justify-content: space-around;
-}
-.gap-6 {
-  gap: 1.5rem;
-}
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .bg-contain {
   background-size: contain;
@@ -656,19 +654,22 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .pt-4 {
   padding-top: 1rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 .text-center {
   text-align: center;
@@ -917,19 +918,21 @@ video {
   display: block;
   display: flex;
   height: 100%;
-  width: 33.333333%;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .desktop-nav .nav-item {
   position: relative;
   display: block;
   display: flex;
-  height: 100%;
+  height: 2rem;
   align-items: center;
   justify-content: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .desktop-nav .nav-item:hover {
   -webkit-text-decoration-line: underline;
@@ -954,6 +957,13 @@ video {
   }
 .theme-light .nav {
   background-color: rgba(255,255,255,.85);
+}
+.nav-contacts {
+  height: 0rem;
+  transition: all .3s;
+}
+.nav-contacts.show {
+  height: 4rem;
 }
 .theme-switcher {
   position: relative;
@@ -1112,15 +1122,15 @@ video {
   opacity: .15;
 }
 body {
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   font-weight: 300;
-  transition: all 1s;
+  transition: all .3s;
 }
 @media (min-width: 768px) {
 
   body {
-    padding-bottom: 0px;
     padding-top: 4rem;
+    padding-bottom: 0px;
   }
 }
 body {
@@ -1145,6 +1155,15 @@ body.theme-light {
   --tw-text-opacity: 1;
   color: rgb(18 22 21 / var(--tw-text-opacity));
 }
+body.show-contacts {
+  padding-bottom: 8rem;
+}
+@media (min-width: 768px) {
+
+  body.show-contacts {
+    padding-bottom: 0px;
+  }
+}
 .flag.ge {
     background-image: url('../../img/flags/flag-ge.svg');
   }
@@ -1167,6 +1186,7 @@ h2 {
   padding-top: 1.5rem;
   text-align: center;
   font-size: 1.625rem;
+  font-weight: 100;
 }
 h3 {
   text-align: left;

@@ -9,20 +9,14 @@
     <link rel="stylesheet" href="/styles/tailwind-output.css" >
     <script src="js/lib/jquery-3.6.0.min.js"></script>
 </head>
-<body class="theme-light">
-<div class="theme-switcher-container
-            w-full flex justify-center items-center pt-4 pb-2
-            md:hidden">
-    <div class="theme-switcher">
-        <div class="checker"></div>
-    </div>
-</div>
+<body class="theme-dark">
+
 <div class="geo-header
             flex justify-center items-center
             md:hidden">
-    <div class="geo w-full py-4 flex justify-center">
-        <div class="geo-content flex flex-col justify-center items-center">
-            <div class="flag ge w-4 h-3 mb-1 bg-center bg-no-repeat bg-contain"></div>
+    <div class="geo w-full pt-6 pb-4 flex justify-center">
+        <div class="geo-content flex flex-col gap-2 justify-center items-center">
+            <div class="flag ge w-4 h-3 bg-center bg-no-repeat bg-contain"></div>
             <div class="geo-description text-12 font-regular opacity-60">Now in <span class="country">Georgia</span></div>
         </div>
     </div>
@@ -33,22 +27,7 @@
     <div class="title-description font-regular
                 lg:text-18">photo artist</div>
 </div>
-<div class="contacts
-            py-8 flex gap-6 justify-center items-center
-            md:hidden">
-    <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
-        <span class="contact-icon icon-telegram"></span>
-    </a>
-    <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
-        <span class="contact-icon icon-whatsapp"></span>
-    </a>
-    <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
-        <span class="contact-icon icon-instagram"></span>
-    </a>
-    <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
-        <span class="contact-icon icon-email"></span>
-    </a>
-</div>
+
 <div class="swiper-container py-4">
     <!-- Slider main container -->
     <div class="ckay-swiper swiper">
@@ -151,17 +130,45 @@
     </div>
 </div>
 
-
 <div class="footer w-full flex relative p-8">
 
 </div>
 
 <div class="nav
-            mobile-nav fixed w-full h-16 left-0 bottom-0 px-4 flex justify-around items-center backdrop-blur-lg
+            mobile-nav w-full fixed left-0 bottom-0 backdrop-blur-lg
             md:hidden">
-    <a class="nav-item" href="/portfolio">Portfolio</a>
-    <a class="nav-item" href="/">Home</a>
-    <a class="nav-item" href="/price">Price</a>
+    <div class="nav-contacts
+                w-full h-16 _js-nav-contacts flex justify-center items-center overflow-hidden">
+        <div class="contacts
+                    flex gap-8 justify-center items-center pt-4
+                    md:hidden">
+            <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-telegram"></span>
+            </a>
+            <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-whatsapp"></span>
+            </a>
+            <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-instagram"></span>
+            </a>
+            <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
+                <span class="contact-icon icon-email"></span>
+            </a>
+        </div>
+    </div>
+    <div class="nav-items
+                h-16 flex gap-2 px-4 justify-center items-center">
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/portfolio">Portfolio</a>
+        <div class="nav-item flex-shrink-0">
+            <div class="theme-switcher">
+                <div class="checker"></div>
+            </div>
+        </div>
+        <a class="nav-item" href="/price">Price</a>
+        <span class="nav-item _js-show-nav-contacts">Contacts</span>
+    </div>
+
 </div>
 <div class="nav
             desktop-nav fixed w-full h-16 left-0 top-0 px-4 justify-between items-center backdrop-blur-lg hidden
@@ -170,7 +177,7 @@
     <div class="w-2/5">
         <div class="nav-items flex justify-start items-center">
             <div class="theme-switcher
-                        mr-2 flex-shrink-0
+                        mx-2 flex-shrink-0
                         lg:mr-4">
                 <div class="checker"></div>
             </div>
@@ -183,8 +190,8 @@
     <div class="w-1/5">
         <div class="geo w-full py-4 flex justify-center">
             <div class="geo-content flex flex-row gap-2 justify-center items-center">
+                <div class="geo-description text-12 font-regular opacity-60">Now in <span class="country">Georgia</span></div>
                 <div class="flag ge w-4 h-3 bg-center bg-no-repeat bg-contain"></div>
-                <div class="geo-description text-12 opacity-60">Now in <span class="country">Georgia</span></div>
             </div>
         </div>
     </div>

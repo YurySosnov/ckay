@@ -56,4 +56,8 @@ $(function(){
     $('.theme-switcher').on('click', function(){
         $body.rotateClass('theme-dark','theme-light');
     });
+    $('._js-show-nav-contacts').on('click', function (){
+        $('._js-nav-contacts').toggleClass('show');
+        $body.toggleClass('show-contacts');
+    });
 });

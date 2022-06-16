@@ -143,6 +143,9 @@ module.exports = {
       width: {
         'screen-xs': '480px'
       },
+      height: {
+        '0': '0rem',
+      },
       maxWidth: {
         '1/1': '100%',
         '1/2': '50%',
@@ -211,6 +214,7 @@ module.exports = {
         '9/12': '75%',
         '10/12': '83.333333%',
         '11/12': '91.666667%',
+        '18': '4.5rem'
       },
       minWidth: {
         'screen-xs': '480px'
