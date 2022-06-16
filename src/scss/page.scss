@@ -15,7 +15,9 @@
 }
 
 body {
-  @apply font-thin transition-all-1s pb-20;
+  @apply font-light transition-all-1s pb-20;
+  @apply md:pb-0 md:pt-16;
+  font-family: 'San Francisco', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 1rem;
   &.theme-dark {
     @apply bg-dark text-dark;
@@ -99,5 +101,18 @@ h3 {
 .theme-light {
   .separator .dot {
     @apply opacity-15 bg-element-light;
+  }
+}
+
+.theme-dark {
+  .footer {
+    @apply bg-nav-dark;
+  }
+}
+
+
+.theme-light {
+  .footer {
+    @apply bg-nav-light;
   }
 }
