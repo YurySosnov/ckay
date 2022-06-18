@@ -644,23 +644,28 @@ video {
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
-.p-6 {
-  padding: 1.5rem;
-}
 .p-8 {
   padding: 2rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
@@ -679,12 +684,6 @@ video {
 }
 .text-24 {
   font-size: 1.5rem;
-}
-.text-32 {
-  font-size: 2rem;
-}
-.text-28 {
-  font-size: 1.75rem;
 }
 .font-thin {
   font-weight: 100;
@@ -1130,7 +1129,6 @@ video {
 body {
   padding-bottom: 4rem;
   font-weight: 300;
-  transition: all .3s;
 }
 @media (min-width: 768px) {
 
@@ -1142,6 +1140,9 @@ body {
 body {
   font-family: 'San Francisco', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 1rem;
+}
+body.theme-inited {
+  transition: all .3s;
 }
 body.theme-dark {
   --tw-bg-opacity: 1;
