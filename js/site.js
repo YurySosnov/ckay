@@ -26,9 +26,9 @@ const ClassBASE = function() {
     };
     this.cookie = {
         set: function (key, val, exp) {
-            _this.store.set(key, val);
-            let d = location.hostname.split('.').reverse();
-            let cookieString = key + '=' + encodeURIComponent(val) + '; domain=' + d[1] + '.' + d[0] + '; path=/; Secure; sameSite=Lax';
+            // _this.store.set(key, val);
+            // let d = location.hostname.split('.').reverse();
+            let cookieString = key + '=' + encodeURIComponent(val) + '; domain=' + location.hostname + '; path=/; Secure; sameSite=Lax';
             if (!!exp) {
                 let expires;
                 if (typeof exp.y === 'number' && typeof exp.m === 'number' && typeof exp.d === 'number') {
@@ -52,9 +52,9 @@ const ClassBASE = function() {
             ) || false;
         },
         del: function (key) {
-            _this.store.del(key);
-            _this.cookie.set(key, '', {clear: true});
-            // document.cookie = key + '=; Max-Age=0;';
+            // _this.store.del(key);
+            // _this.cookie.set(key, '', {clear: true});
+            document.cookie = key + '=; Max-Age=0;';
         }
     };
     this.lstore = {
