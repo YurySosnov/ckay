@@ -1,0 +1,65 @@
+h1 {
+  @apply text-32 text-center pt-6  pb-3 font-thin;
+}
+
+h2 {
+  @apply text-26 text-center pt-6  pb-3 font-thin;
+}
+
+h3 {
+  @apply text-22 text-center font-thin pt-4 pb-2;
+}
+
+h4 {
+  @apply text-16 font-bold;
+}
+
+p {
+  @apply pb-4;
+}
+
+.content {
+  @apply mx-auto max-w-screen-lg xl:max-w-screen-xl px-8;
+}
+
+.separator {
+  @apply flex justify-center gap-5 py-4;
+  .dot {
+    @apply w-0.5 h-0.5 rounded-full;
+  }
+}
+
+.flag {
+  &.ge {
+    background-image: url('../img/flags/flag-ge.svg');
+  }
+}
+
+
+/* THEMES */
+
+
+.theme-dark {
+  .flag {
+    box-shadow: 0 1px 3px rgba(255,255,255,.1);
+  }
+  .title-name, h2 {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  }
+  .separator .dot {
+    @apply opacity-10 bg-element-dark;
+  }
+}
+
+
+.theme-light {
+  .flag {
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  }
+  .title-name, h2 {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  }
+  .separator .dot {
+    @apply opacity-15 bg-element-light;
+  }
+}

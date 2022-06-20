@@ -1,0 +1,60 @@
+.nav {
+  @apply z-10;
+}
+
+.mobile-nav {
+  .nav-item {
+    @apply relative block h-full px-2 flex justify-center items-center flex-shrink-0 cursor-pointer;
+  }
+  .nav-submenu {
+    @apply box-content relative w-full flex justify-center items-center overflow-hidden transition-all-03s h-0 pt-0;
+    &.show {
+      @apply pt-4;
+      &.x1 {
+        @apply h-12;
+      }
+      &.x1\.5 {
+        @apply h-16;
+      }
+      &.x7 {
+        @apply h-84;
+      }
+      @apply h-0;
+    }
+  }
+  .nav-submenu-item {
+    @apply w-full h-12 flex justify-center items-center;
+  }
+  .nav-submenu-close {
+    @apply flex justify-center items-center absolute top-0 left-0 w-full h-8 opacity-30;
+  }
+}
+
+.desktop-nav {
+  .nav-item {
+    @apply relative block px-4 h-8 flex justify-center items-center cursor-pointer hover:underline;
+    @apply lg:px-4;
+  }
+  .contact-link {
+    @apply border-r-0 md:bg-transparent;
+  }
+}
+
+.theme-dark {
+  .nav {
+    @apply bg-nav-dark;
+  }
+}
+
+.theme-light {
+  .nav {
+    @apply bg-nav-light;
+  }
+}
+
+.nav-contacts {
+  @apply h-0 transition-all-03s;
+  &.show {
+    @apply h-16;
+  }
+}

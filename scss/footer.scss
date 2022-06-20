@@ -1,0 +1,23 @@
+.theme-dark {
+  .footer {
+    @apply bg-footer-dark;
+  }
+}
+
+.theme-light {
+  .footer {
+    @apply bg-footer-light;
+  }
+}
+
+.footer {
+  .footer-block {
+    @apply w-full;
+  }
+  .languages {
+    @apply w-full flex justify-center items-center;
+    .lang {
+      @apply p-2;
+    }
+  }
+}

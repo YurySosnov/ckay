@@ -1,7 +1,6 @@
 .service-section {
-  @apply px-8 py-8;
+  @apply py-8;
 }
-
 
 .service-section-grid {
   @apply grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-2 lg:grid-cols-6 lg:gap-4;
@@ -19,16 +18,15 @@
   }
 }
 
+
+/* THEMES */
+
 .theme-dark {
   .service-section-title {
     border-color: rgba(255,255,255,.05);
   }
 }
-.theme-color {
-  .service-section-title {
-    border-color: rgba(156,100,213,.1);
-  }
-}
+
 .theme-light {
   .service-section-title {
     border-color: rgba(0,0,0,.05);

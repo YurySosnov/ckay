@@ -62,13 +62,14 @@ module.exports = {
       backgroundColor: {
         // dark: {'DEFAULT': '#151515'},
         dark: {'DEFAULT': '#090d10'},
-        color: {'DEFAULT': '#f0e4ce'},
         light: {'DEFAULT': '#F6F6F6'},
         'element-dark': {'DEFAULT': '#ddeaee'},
         'element-light': {'DEFAULT': '#121615'},
         // 'nav-dark': {'DEFAULT': 'rgba(0,0,0,.65)'},
         'nav-dark': {'DEFAULT': 'rgba(17,20,26,.65)'},
         'nav-light': {'DEFAULT': 'rgba(255,255,255,.85)'},
+        'footer-dark': {'DEFAULT': '#101421'},
+        'footer-light': {'DEFAULT': '#EEEEEE'},
       },
       borderColor: {},
       spacing: {
@@ -145,6 +146,8 @@ module.exports = {
       },
       height: {
         '0': '0rem',
+        '84': '21rem',
+        '112': '28rem'
       },
       maxWidth: {
         '1/1': '100%',

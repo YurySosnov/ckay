@@ -1,0 +1,33 @@
+.ckay-swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-light h-full top-0 mt-0 w-1/12 opacity-10;
+    &:after {
+      @apply text-16 md:text-20 lg:text-36;
+    }
+  }
+  .swiper-button-prev {
+    @apply left-0;
+  }
+  .swiper-button-next {
+    @apply right-0;
+  }
+}
+
+.theme-dark {
+  .ckay-swiper {
+    .swiper-button-next,
+    .swiper-button-prev {
+      @apply bg-dark text-dark;
+    }
+  }
+}
+
+.theme-light {
+  .ckay-swiper {
+    .swiper-button-next,
+    .swiper-button-prev {
+      @apply bg-light text-light;
+    }
+  }
+}

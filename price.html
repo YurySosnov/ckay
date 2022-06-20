@@ -11,13 +11,55 @@
     <script src="js/site.js"></script>
 </head>
 <body class="theme-dark">
+
+<div class="content">
+    <h1>Price</h1>
+    <table>
+        <tr>
+            <td>Individual</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Wedding</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Family</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Fashion</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Fine Art</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Love Story</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Reportage</td>
+            <td></td>
+            <td>200</td>
+        </tr>
+    </table>
+</div>
+
 <div class="nav
             mobile-nav w-full fixed left-0 bottom-0 backdrop-blur-lg
             md:hidden">
-    <div class="nav-contacts
-                w-full h-16 _js-nav-contacts flex justify-center items-center overflow-hidden">
-        <div class="contacts
-                    flex gap-8 justify-center items-center pt-4
+    <div class="nav-submenu nav-submenu-contacts x1
+                _js-nav-submenu _js-nav-submenu-contacts">
+        <div class="submenu submenu-contacts
+                    flex gap-8 justify-center items-center
                     md:hidden">
             <a class="contact-link" target="_blank" href="https://t.me/communi_cate">
                 <span class="contact-icon icon-telegram"></span>
@@ -33,17 +75,35 @@
             </a>
         </div>
     </div>
+    <div class="nav-submenu nav-submenu-services x7
+                _js-nav-submenu _js-nav-submenu-services">
+        <div class="submenu submenu-services
+                    flex-col justify-center items-center
+                    md:hidden">
+            <a class="nav-submenu-item" href="#">Individual</a>
+            <a class="nav-submenu-item" href="#">Wedding</a>
+            <a class="nav-submenu-item" href="#">Family</a>
+            <a class="nav-submenu-item" href="#">Fashion</a>
+            <a class="nav-submenu-item" href="#">Fine Art</a>
+            <a class="nav-submenu-item" href="#">Love story</a>
+            <a class="nav-submenu-item" href="#">Reportage</a>
+        </div>
+    </div>
+
     <div class="nav-items
                 h-16 flex gap-2 px-4 justify-center items-center">
         <a class="nav-item" href="/">Home</a>
-        <a class="nav-item" href="/portfolio.html">Portfolio</a>
+        <a class="nav-item" href="/services.html">Services</a>
+        <!--        <span class="nav-item _js-nav-show-submenu"-->
+        <!--              data-submenu="services">Services</span>-->
         <div class="nav-item flex-shrink-0">
             <div class="theme-switcher">
                 <div class="checker"></div>
             </div>
         </div>
         <a class="nav-item" href="/price.html">Price</a>
-        <span class="nav-item _js-show-nav-contacts">Contacts</span>
+        <span class="nav-item _js-nav-show-submenu"
+              data-submenu="contacts">Contacts</span>
     </div>
 
 </div>
@@ -91,5 +151,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

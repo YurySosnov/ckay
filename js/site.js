@@ -2,8 +2,8 @@ const ClassBASE = function() {
     const _this = this;
     const $body = $('body');
     const $themeSwitcher = $('.theme-switcher');
-    const themes = ['theme-dark', 'theme-light'];
-    this.defaultTheme = 'theme-dark';
+
+    /* STORES */
     this.store = { // personal store without localStorage, cookies
         data: {},
         get: function(k) {
@@ -82,7 +82,7 @@ const ClassBASE = function() {
         set: function(key, data) {
             // duplicate in personal store
             _this.store.set(key, data);
-            var dataJSON = JSON.stringify(data);
+            const dataJSON = JSON.stringify(data);
             window.localStorage.setItem(key, dataJSON);
         },
         del: function(key) {
@@ -93,52 +93,53 @@ const ClassBASE = function() {
             window.localStorage.clear();
         }
     };
-    this.swiper = null;
 
-    this.initNavContacts = function() {
-        $('._js-show-nav-contacts').on('click', function (){
-            $('._js-nav-contacts').toggleClass('show');
-            $('body').toggleClass('show-contacts');
-        });
-    }
-    this.initSwiper = function() {
-        if ($('.swiper').length) {
-            _this.swiper = new Swiper('.swiper', {
-                loop: true,
-                slidesPerView: 1.25,
-                spaceBetween: 8,
-                centeredSlides: true,
-                speed: 1000,
+    /* SWIPER HOMEPAGE */
+    this.swiperHomepageOptions = {
+        loop: true,
+        slidesPerView: 1.3,
+        spaceBetween: '4%',
+        centeredSlides: true,
+        speed: 1000,
 
-                // If we need pagination
-                // pagination: {
-                //     el: '.swiper-pagination',
-                // },
+        // If we need pagination
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
 
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-                // And if we need scrollbar
-                // scrollbar: {
-                //     el: '.swiper-scrollbar',
-                // },
+        // And if we need scrollbar
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
 
-                breakpoints: {
-                    1024: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 30,
-                    }
-                }
-            });
+        breakpoints: {
+            480: {
+                slidesPerView: 2.6,
+                spaceBetween: '3%',
+            },
+            1024: {
+                slidesPerView: 3.75,
+                spaceBetween: '2%',
+            }
         }
+    };
+    this.swiperHomepageInit = function() {
+        if ($('.swiper-homepage').length)
+            _this.swiperHomepage = new Swiper('.swiper-homepage', _this.swiperHomepageOptions);
     }
 
+    /* THEME SWITCHER */
+    this.themes = ['theme-dark', 'theme-light'];
+    this.themeDefault = 'theme-dark';
     this.themeApply = function(theme) {
-        for (let i = 0, len = themes.length; i < len; i++) {
-            $body.removeClass(themes[i]);
+        for (let i = 0, len = _this.themes.length; i < len; i++) {
+            $body.removeClass(_this.themes[i]);
         }
         $body.addClass(theme);
         $themeSwitcher.data('current-theme', theme);
@@ -146,41 +147,60 @@ const ClassBASE = function() {
         this.themeCurrent = theme;
     }
     this.themeApplyCurrent = function() {
-        const currentTheme = _this.lstore.get('theme');
+        const currentTheme = _this.lstore.get('theme') || _this.themeDefault;
         if (!!currentTheme && !$body.hasClass(currentTheme))
             this.themeApply(currentTheme);
     }
     this.themeChange = function() {
         let index;
-        for (let i = 0, len = themes.length; i < len; i++) {
-            if (this.themeCurrent === themes[i]) {
+        for (let i = 0, len = _this.themes.length; i < len; i++) {
+            if (this.themeCurrent === _this.themes[i]) {
                 index = i === len - 1 ? 0 : i + 1;
                 break;
             }
         }
-        this.themeApply(themes[index]);
+        this.themeApply(_this.themes[index]);
     }
-    this.themeInitSwitcher = function() {
-        console.log('initSw');
+    this.themeSwitcherInit = function() {
         $themeSwitcher.on('click', function(){
-            console.log('switch');
             _this.themeChange();
         });
     }
     this.themeInit = function () {
         _this.themeCurrent = _this.lstore.get('theme')
             ? _this.lstore.get('theme')
-            : this.defaultTheme
-        _this.themeInitSwitcher();
+            : this.themeDefault
+        _this.themeSwitcherInit();
         _this.themeApplyCurrent();
         setTimeout(function() {$body.addClass('theme-inited');}, 300);
     }
 
+    /* NAV */
+    this.navContactsInit = function() {
+        $('._js-show-nav-contacts').on('click', function (){
+            $('._js-nav-contacts').toggleClass('show');
+            $('body').toggleClass('show-contacts');
+        });
+    }
+    this.navSubmenuInit = function() {
+        $('._js-nav-show-submenu').on('click', function(){
+            const $submenuItem = $('._js-nav-submenu-' + $(this).data('submenu'));
+            if ($submenuItem.hasClass('show')) {
+                $submenuItem.removeClass('show');
+            } else {
+                $('._js-nav-submenu').removeClass('show');
+                $submenuItem.addClass('show');
+            }
+        });
+        $('._js-nav-submenu-close').on('click', function(){
+            $(this).parent().removeClass('show');
+        });
+    }
 };
 
 $(function(){
     window.BASE = new ClassBASE();
     window.BASE.themeInit();
-    window.BASE.initNavContacts();
-    window.BASE.initSwiper();
+    window.BASE.navSubmenuInit();
+    window.BASE.swiperHomepageInit();
 });
