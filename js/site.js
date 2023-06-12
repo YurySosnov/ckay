@@ -1,3 +1,27 @@
+function encodeImageFileAsURL(element) {
+    let file = element.files[0];
+    let reader = new FileReader();
+    reader.onloadend = function () {
+        console.log('RESULT', reader.result);
+    }
+    reader.readAsDataURL(file);
+}
+
+function setClipboard(text) {
+    const type = "text/plain";
+    const blob = new Blob([text], {type});
+    const data = [new ClipboardItem({[type]: blob})];
+
+    navigator.clipboard.write(data).then(
+      () => {
+          /* success */
+      },
+      () => {
+          /* failure */
+      }
+    );
+}
+
 const ClassBASE = function() {
     const _this = this;
     const $body = $('body');
@@ -196,6 +220,124 @@ const ClassBASE = function() {
             $(this).parent().removeClass('show');
         });
     }
+
+    /* CALCULATOR */
+    this.prices = {
+        hr: 100,
+        ss: 0.2,
+        cc: 1,
+        rt: 3,
+    }
+    this.calcDefaults = {
+        mt: 120,
+        et: 30,
+        ss: 50,
+        cc: 50,
+        rt: 5
+    }
+    this.calcValues = {
+        mt: 120,
+        mp: 200,
+        ss: 50,
+        cc: 50,
+        rt: 5,
+        image: ''
+    }
+    this.calculatePrice = function () {
+        let ls = window.localStorage;
+        let p = this.prices;
+
+        let mt = $('._js-calc-mt').val() / 60;
+        let et = $('._js-calc-et').val() / 60;
+        let ss = $('._js-calc-ss').val();
+        let cc = $('._js-calc-cc').val();
+        let rt = $('._js-calc-rt').val();
+        let img = $('._js-calc-img').val();
+
+        let mp = mt * p.hr + ss*p.ss + cc * p.cc + rt * p.rt;
+        let ep = mp / mt * et;
+        mp = Math.floor(mp * .85 / 10) * 10;
+        ep = Math.floor(ep / 10) * 10;
+
+        $('._js-calc-mp').val(mp);
+        $('._js-calc-ep').val(ep);
+
+        ls.setItem('mt', mt.toString());
+        ls.setItem('ss', mt.toString());
+        ls.setItem('cc', mt.toString());
+        ls.setItem('rt', mt.toString());
+        ls.setItem('mp', mt.toString());
+        ls.setItem('img', img.toString());
+    }
+    this.encodeImageFileAsURL = function(element){
+        console.log(element);
+        let file = element.files[0];
+        let reader = new FileReader();
+        reader.onloadend = function () {
+            let image = reader.result + '';
+            // _this.planImage = reader.result;
+            // navigator.clipboard.writeText(image).then(() => {
+            //     console.log('success');
+            // });
+            navigator.clipboard.writeText(image).then(
+              () => {console.log('s');},
+              () => {console.log('e');}
+            );
+        }
+        reader.readAsDataURL(file);
+    }
+    // this.openPlan = function () {
+    //     let url = '/plan.html?';
+    //     for (let k in this.calcValues) {
+    //         url += k + '=' + this.calcValues[k] + '&';
+    //     }
+    //     url = location.origin + url;
+    //     console.log(url);
+    //     window.open(location.origin + url, '_blank');
+    // }
+    this.initCalc = function () {
+        let $imageElement = $('._js-calc-image');
+        $imageElement.on('change', function(e){
+            _this.encodeImageFileAsURL($imageElement[0]);
+        });
+        let d = this.calcDefaults;
+        $('._js-calc-mt').val(d.mt);
+        $('._js-calc-et').val(d.et);
+        $('._js-calc-ss').val(d.ss);
+        $('._js-calc-cc').val(d.cc);
+        $('._js-calc-rt').val(d.rt);
+
+        $('._js-calc-calculate').on('click', function(){
+            _this.calculatePrice();
+        });
+        // $('._js-open-plan').on('click', function(){
+        //    _this.openPlan();
+        // });
+    }
+
+    /* RENDER PLAN */
+
+    this.renderPlan = function() {
+        let ls = window.localStorage;
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let data = {
+            ss: ls.getItem('ss'),
+            cc: ls.getItem('cc'),
+            rt: ls.getItem('rt'),
+            mt: ls.getItem('mt'),
+            mp: ls.getItem('mp'),
+        }
+        let image = ls.getItem('image');
+        let img = ls.getItem('img');
+
+        navigator.clipboard.readText().then((clipText) => {
+            $('._js-plan-image').css({'background-image': `url(${clipText})`});
+        });
+
+        for (let key in data) $('._js-render-' + key).html(data[key]);
+        // $('._js-plan-image').css({'background-image' : `url(${img})`});
+    }
 };
 
 $(function(){
@@ -203,4 +345,5 @@ $(function(){
     window.BASE.themeInit();
     window.BASE.navSubmenuInit();
     window.BASE.swiperHomepageInit();
+    window.BASE.initCalc();
 });

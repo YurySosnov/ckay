@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PLAN</title>
+    <link rel="stylesheet" href="/styles/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/styles/tailwind-output.css">
+    <script src="/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/js/lib/swiper-bundle.min.js"></script>
+    <script src="/js/lib/rotate-class.js"></script>
+    <script src="/js/site.js"></script>
+</head>
+<body class="plan-body">
+<div id="plan" class="plan">
+    <div class="plan-image-bg _js-render-image"></div>
+    <div class="plan-image _js-render-image"></div>
+    <div class="plan-title">Title</div>
+    <div class="plan-info">
+        <div class="plan-info-item">
+            <div class="plan-info-item-name">SS</div>
+            <div class="plan-info-item-val _js-render-ss">100</div>
+        </div>
+        <div class="plan-info-item">
+            <div class="plan-info-item-name">CC</div>
+            <div class="plan-info-item-val _js-render-cc">20</div>
+        </div>
+        <div class="plan-info-item">
+            <div class="plan-info-item-name">RT</div>
+            <div class="plan-info-item-val _js-render-rt">10</div>
+        </div>
+        <div class="plan-info-item">
+            <div class="plan-info-item-name">MT</div>
+            <div class="plan-info-item-val _js-render-mt">120</div>
+        </div>
+        <div class="plan-info-item">
+            <div class="plan-info-item-name">MP</div>
+            <div class="plan-info-item-val _js-render-mp">200</div>
+        </div>
+    </div>
+    <div class="plan-desc">
+        <div class="plan-desc-items">
+            <span class="plan-desc-item">
+                <span class="font-semibold">SS</span> - selected shots
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">CC</span> - color corrected
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">RT</span> - retouched
+            </span>
+            <br>
+            <span class="plan-desc-item">
+                <span class="font-semibold">MT</span> - main time minutes
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">MP</span> - main price USD
+            </span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+$(function(){
+    window.BASE.renderPlan();
+});
+</script>
+</html>

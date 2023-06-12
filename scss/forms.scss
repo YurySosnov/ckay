@@ -1,0 +1,11 @@
+.theme-dark {
+  input {
+    @apply bg-white-010 text-white-050;
+  }
+}
+
+.theme-light {
+  input {
+    @apply bg-black-010 text-black-050;
+  }
+}

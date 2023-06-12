@@ -19,7 +19,7 @@ p {
 }
 
 .content {
-  @apply mx-auto max-w-screen-lg xl:max-w-screen-xl px-8;
+  @apply mx-auto max-w-screen-lg xl:max-w-screen-xl px-8 pb-8;
 }
 
 .separator {
@@ -33,6 +33,20 @@ p {
   &.ge {
     background-image: url('../img/flags/flag-ge.svg');
   }
+}
+
+.prices-table {
+  tr {
+    td {
+      @apply border border-dashed p-4;
+    }
+  }
+}
+
+small {
+  font-size: 80%;
+  opacity: .3;
+  font-weight: 500;
 }
 
 
@@ -49,6 +63,13 @@ p {
   .separator .dot {
     @apply opacity-10 bg-element-dark;
   }
+  .prices-table {
+    tr {
+      td {
+        border-color: rgba(255,255,255,.1);
+      }
+    }
+  }
 }
 
 
@@ -62,4 +83,12 @@ p {
   .separator .dot {
     @apply opacity-15 bg-element-light;
   }
+  .prices-table {
+    tr {
+      td {
+        border-color: rgba(0,0,0,.1);
+      }
+    }
+  }
 }
+

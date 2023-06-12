@@ -1,0 +1,58 @@
+body.plan-body {
+  @apply bg-white pt-0 pb-0;
+}
+
+.plan {
+  @apply relative;
+  width: 100vw;
+  height: 141vw;
+}
+
+.plan-image-bg {
+  @apply absolute w-full h-full left-0 top-0 bg-center bg-cover bg-no-repeat;
+  filter: blur(4vw);
+  opacity: .2;
+}
+
+.plan-image {
+  @apply w-1/2 h-1/2 absolute left-1/2 top-1/2 bg-center bg-cover bg-no-repeat;
+  transform: translate(-50%,-50%);
+}
+
+.plan-title {
+  @apply w-full h-1/4 absolute flex justify-center items-center;
+  @apply font-semibold text-black;
+  font-size: 5.6vw;
+}
+
+.plan-info {
+  @apply w-full h-1/8 absolute flex justify-center items-center bottom-1/8 left-0;
+  .plan-info-item {
+    @apply flex flex-col justify-start items-center;
+    width: 12vw;
+    .plan-info-item-name {
+      @apply flex justify-center items-center w-full text-black;
+      @apply font-semibold;
+      height: 8vw;
+      font-size: 3vw;
+    }
+    .plan-info-item-val {
+      @apply flex justify-center items-center w-full text-black;
+      @apply font-light;
+      height: 8vw;
+      font-size: 3vw;
+    }
+  }
+}
+
+.plan-desc {
+  @apply absolute bottom-0 left-0 w-full h-1/8 flex justify-center items-center;
+  font-size: 2vw;
+  .plan-desc-items {
+    @apply text-center w-full;
+  }
+  .plan-desc-item {
+    @apply text-black;
+    margin: 0 2vw;
+  }
+}

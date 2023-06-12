@@ -546,34 +546,54 @@ video {
   bottom: 0px}
 .top-0{
   top: 0px}
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto}
+.col-span-3{
+  grid-column: span 3 / span 3}
+.col-span-2{
+  grid-column: span 2 / span 2}
+.col-span-6{
+  grid-column: span 6 / span 6}
 .mx-2{
   margin-left: 0.5rem;
   margin-right: 0.5rem}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto}
+.mt-1{
+  margin-top: 0.25rem}
 .flex{
   display: flex}
 .table{
   display: table}
+.grid{
+  display: grid}
 .hidden{
   display: none}
-.h-3{
-  height: 0.75rem}
 .h-16{
   height: 4rem}
+.h-3{
+  height: 0.75rem}
 .w-full{
   width: 100%}
-.w-4{
-  width: 1rem}
+.w-40{
+  width: 10rem}
 .w-2\/5{
   width: 40%}
 .w-1\/5{
   width: 20%}
+.w-4{
+  width: 1rem}
 .max-w-screen-md{
   max-width: 768px}
 .flex-shrink-0{
   flex-shrink: 0}
+.list-inside{
+  list-style-position: inside}
+.list-disc{
+  list-style-type: disc}
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr))}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr))}
 .flex-row{
   flex-direction: row}
 .flex-col{
@@ -588,41 +608,51 @@ video {
   justify-content: center}
 .justify-between{
   justify-content: space-between}
-.gap-2{
-  gap: 0.5rem}
 .gap-8{
   gap: 2rem}
-.overflow-hidden{
-  overflow: hidden}
+.gap-2{
+  gap: 0.5rem}
+.rounded-xl{
+  border-radius: 0.75rem}
+.border{
+  border-width: 1px}
+.border-dashed{
+  border-style: dashed}
+.bg-white-010{
+  background-color: rgba(255,255,255,.1)}
 .bg-contain{
   background-size: contain}
 .bg-center{
   background-position: center}
 .bg-no-repeat{
   background-repeat: no-repeat}
+.p-3{
+  padding: 0.75rem}
+.p-1{
+  padding: 0.25rem}
+.p-4{
+  padding: 1rem}
 .p-8{
   padding: 2rem}
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem}
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem}
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem}
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem}
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem}
-.px-4{
-  padding-left: 1rem;
-  padding-right: 1rem}
 .pt-6{
   padding-top: 1.5rem}
 .pb-4{
   padding-bottom: 1rem}
-.pt-4{
-  padding-top: 1rem}
 .text-center{
   text-align: center}
 .text-12{
@@ -631,6 +661,8 @@ video {
   font-size: 1.5rem}
 .font-thin{
   font-weight: 100}
+.font-semibold{
+  font-weight: 600}
 .leading-28{
   line-height: 1.75rem}
 .opacity-60{
@@ -2925,7 +2957,8 @@ p{
   margin-right: auto;
   max-width: 1024px;
   padding-left: 2rem;
-  padding-right: 2rem}
+  padding-right: 2rem;
+  padding-bottom: 2rem}
 @media (min-width: 1280px){
 
   .content{
@@ -2943,6 +2976,15 @@ p{
 .flag.ge {
     background-image: url('../img/flags/flag-ge.svg');
   }
+.prices-table tr td{
+  border-width: 1px;
+  border-style: dashed;
+  padding: 1rem}
+small {
+  font-size: 80%;
+  opacity: .3;
+  font-weight: 500;
+}
 /* THEMES */
 .theme-dark .flag {
     box-shadow: 0 1px 3px rgba(255,255,255,.1);
@@ -2954,6 +2996,9 @@ p{
   --tw-bg-opacity: 1;
   background-color: rgb(221 234 238 / var(--tw-bg-opacity));
   opacity: 0.1}
+.theme-dark .prices-table tr td {
+        border-color: rgba(255,255,255,.1);
+      }
 .theme-light .flag {
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
   }
@@ -2964,6 +3009,9 @@ p{
   --tw-bg-opacity: 1;
   background-color: rgb(18 22 21 / var(--tw-bg-opacity));
   opacity: .15}
+.theme-light .prices-table tr td {
+        border-color: rgba(0,0,0,.1);
+      }
 .shooting{
   padding-top: 1rem;
   padding-bottom: 1rem}
@@ -3035,6 +3083,12 @@ p{
   left: 0px}
 .ckay-swiper .swiper-button-next{
   right: 0px}
+.ckay-swiper .swiper-slide{
+  overflow: hidden}
+@media (min-width: 1024px){
+
+  .ckay-swiper .swiper-slide{
+    border-radius: 0px}}
 .theme-dark .ckay-swiper .swiper-button-next, 
     .theme-dark .ckay-swiper .swiper-button-prev{
   --tw-bg-opacity: 1;
@@ -3100,6 +3154,100 @@ p{
   justify-content: center}
 .footer .languages .lang{
   padding: 0.5rem}
+.theme-dark input{
+  background-color: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.5)}
+.theme-light input{
+  background-color: rgba(0,0,0,.1);
+  color: rgba(0,0,0,.5)}
+body.plan-body{
+  background-color: rgba(255,255,255,1);
+  padding-top: 0px;
+  padding-bottom: 0px}
+.plan{
+  position: relative;
+  width: 100vw;
+  height: 141vw}
+.plan-image-bg{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4vw);
+  opacity: .2}
+.plan-image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50%;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%,-50%)}
+.plan-title{
+  position: absolute;
+  display: flex;
+  height: 25%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(0,0,0,1);
+  font-size: 5.6vw}
+.plan-info{
+  position: absolute;
+  bottom: 12.5%;
+  left: 0px;
+  display: flex;
+  height: 12.5%;
+  width: 100%;
+  align-items: center;
+  justify-content: center}
+.plan-info .plan-info-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+    width: 12vw}
+.plan-info .plan-info-item .plan-info-item-name{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,1);
+  font-weight: 600;
+      height: 8vw;
+      font-size: 3vw}
+.plan-info .plan-info-item .plan-info-item-val{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,1);
+  font-weight: 300;
+      height: 8vw;
+      font-size: 3vw}
+.plan-desc{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  height: 12.5%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw}
+.plan-desc .plan-desc-items{
+  width: 100%;
+  text-align: center}
+.plan-desc .plan-desc-item{
+  color: rgba(0,0,0,1);
+    margin: 0 2vw}
 .theme-switcher{
   position: relative;
   cursor: pointer;

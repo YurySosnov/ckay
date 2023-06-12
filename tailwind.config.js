@@ -15,7 +15,22 @@ module.exports = {
       '2xl': '1560px',
     },
     extend: {
-      colors: {},
+      colors: {
+        'white': 'rgba(255,255,255,1)',
+        'white-075': 'rgba(255,255,255,.75)',
+        'white-050': 'rgba(255,255,255,.5)',
+        'white-025': 'rgba(255,255,255,.25)',
+        'white-015': 'rgba(255,255,255,.15)',
+        'white-010': 'rgba(255,255,255,.1)',
+        'white-005': 'rgba(255,255,255,.05)',
+        'black': 'rgba(0,0,0,1)',
+        'black-075': 'rgba(0,0,0,.75)',
+        'black-050': 'rgba(0,0,0,.5)',
+        'black-025': 'rgba(0,0,0,.25)',
+        'black-015': 'rgba(0,0,0,.15)',
+        'black-010': 'rgba(0,0,0,.1)',
+        'black-005': 'rgba(0,0,0,.05)',
+      },
       fontSize: {
         '0': '0rem',
         '9': '0.5625rem',

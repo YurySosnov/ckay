@@ -1,16 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="/styles/tailwind-output.css" >
-    <script src="js/lib/jquery-3.6.0.min.js"></script>
-    <script src="js/lib/rotate-class.js"></script>
-    <script src="js/site.js"></script>
+    <title>Catrine Kay - calculator</title>
+    <link rel="stylesheet" href="/styles/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/styles/tailwind-output.css">
+    <script src="/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/js/lib/swiper-bundle.min.js"></script>
+    <script src="/js/lib/rotate-class.js"></script>
+    <script src="/js/site.js"></script>
 </head>
 <body class="theme-dark">
+<div class="content">
+<div class="calculator" id="calculator">
+    <div class="grid grid-cols-6 w-full">
+        <div class="flex p-3 col-span-6">
+            <input class="_js-calc-image" type="file">
+<!--            <input class="_js-calc-img" type="text">-->
+        </div>
+        <div class="field flex flex-col p-3 col-span-3">
+            <label for="calc-mt">MT (min)</label>
+            <input id="calc-mt" type="text" class="_js-calc-mt mt-1 p-1"></div>
+        <div class="field flex flex-col p-3 col-span-3">
+            <label for="calc-et">ET (min)</label>
+            <input id="calc-et" type="text" class="_js-calc-et mt-1 p-1">
+        </div>
+        <div class="field flex flex-col p-3 col-span-2">
+            <label for="calc-ss">SS</label>
+            <input id="calc-ss" type="text" class="_js-calc-ss mt-1 p-1">
+        </div>
+        <div class="field flex flex-col p-3 col-span-2">
+            <label for="calc-cc">CC</label>
+            <input id="calc-cc" type="text" class="_js-calc-cc mt-1 p-1">
+        </div>
+        <div class="field flex flex-col p-3 col-span-2">
+            <label for="calc-rt">RT</label>
+            <input id="calc-rt" type="text" class="_js-calc-rt mt-1 p-1">
+        </div>
+    </div>
+    <div class="field flex justify-center items-center p-3">
+        <button class="_js-calc-calculate w-40 p-4 bg-white-010 rounded-xl">CALCULATE</button>
+    </div>
+    <div class="grid grid-cols-2">
+        <div class="field flex flex-col p-3">
+            <label for="calc-mp">MP</label>
+            <input id="calc-mp" type="text" class="_js-calc-mp mt-1 p-1">
+        </div>
+        <div class="field flex flex-col p-3">
+            <label for="calc-ep">EP</label>
+            <input id="calc-ep" type="text" class="_js-calc-ep mt-1 p-1">
+        </div>
+    </div>
+    <div class="p-3">
+        <button class="_js-open-plan">OPEN PLAN</button>
+    </div>
+</div>
+
 <div class="nav
         mobile-nav w-full fixed left-0 bottom-0 backdrop-blur-lg
         md:hidden">
@@ -112,6 +160,6 @@
         </div>
     </div>
 </div>
+</div>
 </body>
-
 </html>

@@ -12,6 +12,11 @@
   .swiper-button-next {
     @apply right-0;
   }
+
+  .swiper-slide {
+    @apply /*rounded-3xl*/ overflow-hidden;
+    @apply lg:rounded-none;
+  }
 }
 
 .theme-dark {
