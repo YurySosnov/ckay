@@ -17,9 +17,13 @@
 <div class="content">
 <div class="calculator" id="calculator">
     <div class="grid grid-cols-6 w-full">
-        <div class="flex p-3 col-span-6">
-            <input class="_js-calc-image" type="file">
-<!--            <input class="_js-calc-img" type="text">-->
+        <div class="field flex flex-col p-3 col-span-6">
+            <label for="calc-title">Title</label>
+            <input id="calc-title" class="_js-calc-title mt-1 p-1" type="text">
+        </div>
+        <div class="flex p-3 col-span-6 flex justify-start items-center">
+            <label for="calc-image" class="mr-4">Image:</label>
+            <input id="calc-image" class="_js-calc-image" type="file">
         </div>
         <div class="field flex flex-col p-3 col-span-3">
             <label for="calc-mt">MT (min)</label>
@@ -54,8 +58,8 @@
             <input id="calc-ep" type="text" class="_js-calc-ep mt-1 p-1">
         </div>
     </div>
-    <div class="p-3">
-        <button class="_js-open-plan">OPEN PLAN</button>
+    <div class="field flex justify-center items-center p-3">
+        <button disabled class="_js-open-plan w-40 p-4 bg-white-010 rounded-xl">OPEN PLAN</button>
     </div>
 </div>
 

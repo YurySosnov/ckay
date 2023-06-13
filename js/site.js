@@ -229,19 +229,12 @@ const ClassBASE = function() {
         rt: 3,
     }
     this.calcDefaults = {
+        title: 'Title',
         mt: 120,
         et: 30,
         ss: 50,
         cc: 50,
         rt: 5
-    }
-    this.calcValues = {
-        mt: 120,
-        mp: 200,
-        ss: 50,
-        cc: 50,
-        rt: 5,
-        image: ''
     }
     this.calculatePrice = function () {
         let ls = window.localStorage;
@@ -252,7 +245,7 @@ const ClassBASE = function() {
         let ss = $('._js-calc-ss').val();
         let cc = $('._js-calc-cc').val();
         let rt = $('._js-calc-rt').val();
-        let img = $('._js-calc-img').val();
+        let title = $('._js-calc-title').val();
 
         let mp = mt * p.hr + ss*p.ss + cc * p.cc + rt * p.rt;
         let ep = mp / mt * et;
@@ -263,44 +256,29 @@ const ClassBASE = function() {
         $('._js-calc-ep').val(ep);
 
         ls.setItem('mt', mt.toString());
-        ls.setItem('ss', mt.toString());
-        ls.setItem('cc', mt.toString());
-        ls.setItem('rt', mt.toString());
-        ls.setItem('mp', mt.toString());
-        ls.setItem('img', img.toString());
+        ls.setItem('ss', ss.toString());
+        ls.setItem('cc', cc.toString());
+        ls.setItem('rt', rt.toString());
+        ls.setItem('mp', mp.toString());
+        ls.setItem('title', title.toString());
     }
     this.encodeImageFileAsURL = function(element){
-        console.log(element);
         let file = element.files[0];
         let reader = new FileReader();
         reader.onloadend = function () {
             let image = reader.result + '';
-            // _this.planImage = reader.result;
-            // navigator.clipboard.writeText(image).then(() => {
-            //     console.log('success');
-            // });
-            navigator.clipboard.writeText(image).then(
-              () => {console.log('s');},
-              () => {console.log('e');}
-            );
+            window.localStorage.setItem('image', image.toString());
         }
         reader.readAsDataURL(file);
     }
-    // this.openPlan = function () {
-    //     let url = '/plan.html?';
-    //     for (let k in this.calcValues) {
-    //         url += k + '=' + this.calcValues[k] + '&';
-    //     }
-    //     url = location.origin + url;
-    //     console.log(url);
-    //     window.open(location.origin + url, '_blank');
-    // }
     this.initCalc = function () {
         let $imageElement = $('._js-calc-image');
         $imageElement.on('change', function(e){
             _this.encodeImageFileAsURL($imageElement[0]);
+            $('._js-open-plan').attr('disabled', false);
         });
         let d = this.calcDefaults;
+        $('._js-calc-title').val(d.title);
         $('._js-calc-mt').val(d.mt);
         $('._js-calc-et').val(d.et);
         $('._js-calc-ss').val(d.ss);
@@ -310,33 +288,26 @@ const ClassBASE = function() {
         $('._js-calc-calculate').on('click', function(){
             _this.calculatePrice();
         });
-        // $('._js-open-plan').on('click', function(){
-        //    _this.openPlan();
-        // });
+        $('._js-open-plan').on('click', function(){
+            window.open(location.origin + '/plan.html','_blank');
+        });
     }
 
     /* RENDER PLAN */
 
     this.renderPlan = function() {
         let ls = window.localStorage;
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
         let data = {
             ss: ls.getItem('ss'),
             cc: ls.getItem('cc'),
             rt: ls.getItem('rt'),
             mt: ls.getItem('mt'),
             mp: ls.getItem('mp'),
+            title: ls.getItem('title'),
         }
         let image = ls.getItem('image');
-        let img = ls.getItem('img');
-
-        navigator.clipboard.readText().then((clipText) => {
-            $('._js-plan-image').css({'background-image': `url(${clipText})`});
-        });
-
         for (let key in data) $('._js-render-' + key).html(data[key]);
-        // $('._js-plan-image').css({'background-image' : `url(${img})`});
+        $('._js-render-image').css({'background-image' : `url(${image})`});
     }
 };
 

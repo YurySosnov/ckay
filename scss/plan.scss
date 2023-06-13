@@ -11,7 +11,7 @@ body.plan-body {
 .plan-image-bg {
   @apply absolute w-full h-full left-0 top-0 bg-center bg-cover bg-no-repeat;
   filter: blur(4vw);
-  opacity: .2;
+  opacity: .25;
 }
 
 .plan-image {
@@ -26,7 +26,7 @@ body.plan-body {
 }
 
 .plan-info {
-  @apply w-full h-1/8 absolute flex justify-center items-center bottom-1/8 left-0;
+  @apply w-full h-3/16 absolute flex justify-center items-center bottom-1/16 left-0;
   .plan-info-item {
     @apply flex flex-col justify-start items-center;
     width: 12vw;
@@ -46,7 +46,7 @@ body.plan-body {
 }
 
 .plan-desc {
-  @apply absolute bottom-0 left-0 w-full h-1/8 flex justify-center items-center;
+  @apply absolute bottom-0 left-0 w-full h-1/16 flex justify-center items-center;
   font-size: 2vw;
   .plan-desc-items {
     @apply text-center w-full;
@@ -55,4 +55,8 @@ body.plan-body {
     @apply text-black;
     margin: 0 2vw;
   }
+}
+
+button:disabled {
+  opacity: .25;
 }

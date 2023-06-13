@@ -546,12 +546,12 @@ video {
   bottom: 0px}
 .top-0{
   top: 0px}
+.col-span-6{
+  grid-column: span 6 / span 6}
 .col-span-3{
   grid-column: span 3 / span 3}
 .col-span-2{
   grid-column: span 2 / span 2}
-.col-span-6{
-  grid-column: span 6 / span 6}
 .mx-2{
   margin-left: 0.5rem;
   margin-right: 0.5rem}
@@ -560,6 +560,8 @@ video {
   margin-right: auto}
 .mt-1{
   margin-top: 0.25rem}
+.mr-4{
+  margin-right: 1rem}
 .flex{
   display: flex}
 .table{
@@ -3178,7 +3180,7 @@ body.plan-body{
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(4vw);
-  opacity: .2}
+  opacity: .25}
 .plan-image{
   position: absolute;
   left: 50%;
@@ -3201,10 +3203,10 @@ body.plan-body{
   font-size: 5.6vw}
 .plan-info{
   position: absolute;
-  bottom: 12.5%;
+  bottom: 6.25%;
   left: 0px;
   display: flex;
-  height: 12.5%;
+  height: 18.75%;
   width: 100%;
   align-items: center;
   justify-content: center}
@@ -3237,7 +3239,7 @@ body.plan-body{
   bottom: 0px;
   left: 0px;
   display: flex;
-  height: 12.5%;
+  height: 6.25%;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -3248,6 +3250,9 @@ body.plan-body{
 .plan-desc .plan-desc-item{
   color: rgba(0,0,0,1);
     margin: 0 2vw}
+button:disabled {
+  opacity: .25;
+}
 .theme-switcher{
   position: relative;
   cursor: pointer;
