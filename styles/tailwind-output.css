@@ -2780,6 +2780,9 @@ body.show-contacts{
 
   body.show-contacts{
     padding-bottom: 0px}}
+.hidden {
+  display: none !important;
+}
 .nav{
   z-index: 10}
 .mobile-nav .nav-item{
@@ -3268,6 +3271,7 @@ button:disabled {
 }
 .plans-list{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center}
 .plans-list-item{

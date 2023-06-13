@@ -72,7 +72,7 @@ button:disabled {
 }
 
 .plans-list {
-  @apply flex justify-center items-center;
+  @apply flex justify-center items-center flex-wrap;
 }
 
 .plans-list-item {

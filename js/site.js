@@ -429,7 +429,7 @@ const ClassBASE = function() {
                 ru: 'Сюжет, эмоция, мораль или идея, а может всё вместе, может 10 лет жизни будет витать в одном снимке'
             },
             image: 'the_one.jpg',
-            q: 2.5,
+            q: 3,
             mt: 60,
             ss: 1,
             cc: 1,
@@ -476,6 +476,7 @@ const ClassBASE = function() {
         let p = this.prices;
         let mth = mt / 60;
         let mp = mth * p.hr * q + ss * p.ss + cc * p.cc + rt * p.rt;
+        mp = Math.floor(mp * .85 / 10) * 10;
         return {mp, mt, ss, cc, rt}
     }
     this.calculatePlan = function (plan) {
@@ -484,20 +485,22 @@ const ClassBASE = function() {
         planData.text = plan.text;
         planData.image = plan.image;
         window.localStorage.setItem('plan', JSON.stringify(planData));
+        window.open(location.origin + '/plan.html', '_blank');
     }
     this.renderPreparedPlan = function() {
         let lang = 'ru';
         let plan = JSON.parse(window.localStorage.getItem('plan'));
         let container = $('#plan');
         for (let key in plan) {
-            if (key !== 'image') {
-                container.find('._js-render-' + key).html(plan[key]);
-            }
-            if (key === 'text') {
-                container.find('._js-render-' + key).html(plan[key][lang]);
-            }
+            if (key !== 'image') container.find('._js-render-' + key).html(plan[key]);
+            if (key === 'text') container.find('._js-render-' + key).html(plan[key][lang]);
         }
         container.find('._js-render-image').css({'background-image': `url(/images/plans/${plan.image})`});
+        $('._js-plan-desc').each(function(){
+            let d = $(this);
+            if (d.hasClass(lang)) d.removeClass('hidden');
+            else d.addClass('hidden');
+        });
     }
 
 };
@@ -508,4 +511,5 @@ $(function(){
     window.BASE.navSubmenuInit();
     window.BASE.swiperHomepageInit();
     window.BASE.initCalc();
+    window.BASE.createPlansList();
 });
