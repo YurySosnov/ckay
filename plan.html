@@ -14,10 +14,11 @@
     <script src="/js/site.js"></script>
 </head>
 <body class="plan-body">
-<div id="plan" class="plan">
+<div id="plan" class="plan _js-plan-container">
     <div class="plan-image-bg _js-render-image"></div>
     <div class="plan-image _js-render-image"></div>
     <div class="plan-title _js-render-title">Title</div>
+    <div class="plan-text _js-render-text">Text</div>
     <div class="plan-info">
         <div class="plan-info-item">
             <div class="plan-info-item-name">SS</div>
@@ -40,18 +41,17 @@
             <div class="plan-info-item-val _js-render-mp">200</div>
         </div>
     </div>
-    <div class="plan-desc">
+    <div class="plan-desc en">
         <div class="plan-desc-items">
             <span class="plan-desc-item">
-                <span class="font-semibold">SS</span> - selected shots
+                <span class="font-semibold">SS</span> - selected
             </span>
             <span class="plan-desc-item">
-                <span class="font-semibold">CC</span> - color corrected
+                <span class="font-semibold">CC</span> - colored
             </span>
             <span class="plan-desc-item">
                 <span class="font-semibold">RT</span> - retouched
             </span>
-            <br>
             <span class="plan-desc-item">
                 <span class="font-semibold">MT</span> - main time minutes
             </span>
@@ -60,11 +60,30 @@
             </span>
         </div>
     </div>
+    <div class="plan-desc ru">
+        <div class="plan-desc-items">
+            <span class="plan-desc-item">
+                <span class="font-semibold">SS</span> - выбрано
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">CC</span> - покрашено
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">RT</span> - отретушированно
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">MT</span> - время (минуты)
+            </span>
+            <span class="plan-desc-item">
+                <span class="font-semibold">MP</span> - Цена USD
+            </span>
+        </div>
+    </div>
 </div>
 </body>
 <script>
 $(function(){
-    window.BASE.renderPlan();
+    window.BASE.renderPreparedPlan();
 });
 </script>
 </html>

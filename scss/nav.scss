@@ -4,7 +4,7 @@
 
 .mobile-nav {
   .nav-item {
-    @apply relative block h-full px-2 flex justify-center items-center flex-shrink-0 cursor-pointer;
+    @apply relative h-full px-2 flex justify-center items-center flex-shrink-0 cursor-pointer text-12;
   }
   .nav-submenu {
     @apply box-content relative w-full flex justify-center items-center overflow-hidden transition-all-03s h-0 pt-0;
@@ -32,7 +32,7 @@
 
 .desktop-nav {
   .nav-item {
-    @apply relative block px-4 h-8 flex justify-center items-center cursor-pointer hover:underline;
+    @apply relative px-4 h-8 flex justify-center items-center cursor-pointer hover:underline;
     @apply lg:px-4;
   }
   .contact-link {

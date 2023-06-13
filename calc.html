@@ -15,13 +15,17 @@
 </head>
 <body class="theme-dark">
 <div class="content">
-<div class="calculator" id="calculator">
+<div class="calculator hidden" id="calculator">
     <div class="grid grid-cols-6 w-full">
         <div class="field flex flex-col p-3 col-span-6">
             <label for="calc-title">Title</label>
             <input id="calc-title" class="_js-calc-title mt-1 p-1" type="text">
         </div>
-        <div class="flex p-3 col-span-6 flex justify-start items-center">
+        <div class="field flex flex-col p-3 col-span-6">
+            <label for="calc-text">Text</label>
+            <input id="calc-text" class="_js-calc-text mt-1 p-1" type="text">
+        </div>
+        <div class="p-3 col-span-6 flex justify-start items-center">
             <label for="calc-image" class="mr-4">Image:</label>
             <input id="calc-image" class="_js-calc-image" type="file">
         </div>
@@ -61,6 +65,10 @@
     <div class="field flex justify-center items-center p-3">
         <button disabled class="_js-open-plan w-40 p-4 bg-white-010 rounded-xl">OPEN PLAN</button>
     </div>
+</div>
+
+<div class="plans-list _js-plans-list">
+
 </div>
 
 <div class="nav

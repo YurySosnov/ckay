@@ -3,15 +3,19 @@ body.plan-body {
 }
 
 .plan {
-  @apply relative;
+  @apply relative overflow-hidden;
   width: 100vw;
-  height: 141vw;
+  height: 141.4285vw;
 }
 
 .plan-image-bg {
-  @apply absolute w-full h-full left-0 top-0 bg-center bg-cover bg-no-repeat;
+  @apply absolute h-full bg-center bg-cover bg-no-repeat;
   filter: blur(4vw);
   opacity: .25;
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;
 }
 
 .plan-image {
@@ -20,9 +24,15 @@ body.plan-body {
 }
 
 .plan-title {
-  @apply w-full h-1/4 absolute flex justify-center items-center;
+  @apply w-full h-1/16 top-1/16 absolute flex justify-center items-center;
   @apply font-semibold text-black;
   font-size: 5.6vw;
+}
+
+.plan-text {
+  @apply absolute w-3/4 h-1/10 top-1/8 left-1/8 text-black;
+  @apply flex justify-center items-center text-center;
+  font-size: 2vw;
 }
 
 .plan-info {
@@ -39,7 +49,7 @@ body.plan-body {
     .plan-info-item-val {
       @apply flex justify-center items-center w-full text-black;
       @apply font-light;
-      height: 8vw;
+      height: 7vw;
       font-size: 3vw;
     }
   }
@@ -59,4 +69,12 @@ body.plan-body {
 
 button:disabled {
   opacity: .25;
+}
+
+.plans-list {
+  @apply flex justify-center items-center;
+}
+
+.plans-list-item {
+  @apply p-4 m-2 text-white bg-white-015 cursor-pointer;
 }
