@@ -3263,6 +3263,9 @@ body.plan-body{
 .plan-desc .plan-desc-item{
   color: rgba(0,0,0,1);
     margin: 0 2vw}
+.plan-desc.hidden {
+    display: none;
+  }
 button:disabled {
   opacity: .25;
 }

@@ -65,6 +65,9 @@ body.plan-body {
     @apply text-black;
     margin: 0 2vw;
   }
+  &.hidden {
+    display: none;
+  }
 }
 
 button:disabled {
